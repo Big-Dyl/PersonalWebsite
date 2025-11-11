@@ -9,23 +9,26 @@ function setBg(){
         document.body.style.backgroundImage = "url('img/bg.png')";
     }
 }
-function typeText(){
-    //type out text for the nav bar
+function typeText() {
     const menuContent = document.getElementById('menu-content');
     const totype = [];
-    for(const li of menuContent.children){
-        if(li.textContent){
-            totype.push(li.textContent);
-            li.textContent = "";
+    for (const li of menuContent.children) {
+        let textNode = Array.from(li.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+        if (textNode) {
+            totype.push(textNode.textContent.trim());
+            textNode.textContent = ""; 
+        } else {
+            totype.push(""); 
         }
     }
-    setTimeout(type_next, 75, 0 ,0);
-    function type_next(element, char){
-        console.log(element)
-        if(element >= totype.length) return;
-        if(char >= totype[element].length) return type_next(element + 1, 0);
-        menuContent.children[2 * element].textContent += totype[element].charAt(char);
+    setTimeout(type_next, 75, 0, 0);
+    function type_next(element, char) {
+        if (element >= totype.length) return;
+        let li = menuContent.children[element];
+        let textNode = Array.from(li.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+        if (!textNode) return type_next(element + 1, 0);
+        if (char >= totype[element].length) return type_next(element + 1, 0);
+        textNode.textContent += totype[element].charAt(char);
         setTimeout(type_next, 75, element, char + 1);
     }
-
 }
