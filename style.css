@@ -38,3 +38,27 @@ a {
 .sociallink{
     width:50px
 }
+
+.popup{
+    position:absolute;
+    background-color: darkgray;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    cursor:move
+}
+
+button{
+    font-family: 'Pixelify Sans';
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer
+}
+
+p{
+    font-size: 12pt;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    padding-top: 0;
+    padding-bottom: 0;
+}
