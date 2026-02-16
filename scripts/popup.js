@@ -2,10 +2,10 @@ let dragging = false;
 let draggedElement;
 let offsetX = 0; 
 let offsetY = 0;
-document.addEventListener("mouseup", (e)=>{
+document.addEventListener("pointerup", (e)=>{
     dragging = false;
 });
-document.addEventListener("mousemove",(e)=>{
+document.addEventListener("pointermove",(e)=>{
     if (!draggedElement || !dragging) return;
     draggedElement.style.left = `${e.clientX - offsetX}px`;
     draggedElement.style.top = `${e.clientY - offsetY}px`;
@@ -24,7 +24,7 @@ function createPopUp(img, link, title, text, posLeft, posTop, width, id){
             <div style = "position:relative; top:5%; text-align:center; align-items:center" class = "popup-content">
                 <div style = "background-color:black">
                 <a href = "${link}">
-                    ${img ? `<img src = ${img} style = "width:${width}px; margin:5px;margin-bottom: 20px;">` : ''}
+                    ${img ? `<img src = ${img} style = "width:${width}; margin:5px;margin-bottom: 20px;">` : ''}
                     <p>${text}</p>
                 </a>
                 </div>
@@ -34,7 +34,7 @@ function createPopUp(img, link, title, text, posLeft, posTop, width, id){
     const popup = document.createElement('div');
     popup.innerHTML = popupTemplate;
     const content = popup.getElementsByClassName("popup")[0]
-    content.addEventListener('mousedown', (e) => {
+    content.addEventListener('pointerdown', (e) => {
         offsetX = e.clientX - content.offsetLeft;
         offsetY = e.clientY - content.offsetTop;
         dragging = true;
@@ -47,5 +47,19 @@ function createPopUp(img, link, title, text, posLeft, posTop, width, id){
 }
 
 function closePopup(id){
-    document.getElementById(id).innerHTML = "";
+    const popup = document.getElementById(id);
+    const popupContent = popup.querySelector(".popup-content");
+    const content = popup.innerHTML;
+    const button = popup.querySelector("button");
+    button.innerHTML = "+";
+    button.onclick = ()=>{openPopup(id, content)};
+    popupContent.innerHTML = "";
+}
+
+function openPopup(id, content){
+    const popup = document.getElementById(id);
+    const button = popup.querySelector("button");
+    button.innerHTML = "X"
+    button.onclick = closePopup(id);
+    popup.innerHTML = content;
 }
