@@ -18,9 +18,9 @@ document.body.onload = ()=>{
 
 
 function createPopUp(img, link, title, text, posLeft, posTop, width, id){
-    const popupTemplate = `<div class = "popup" id = "${id}" style = "left:${posLeft}; top:${posTop}">
+    const popupTemplate = `<div class = "popup" id = "${id}" style = "left:${posLeft}; top:${posTop}; max-width:30vw;">
         <div style = "margin-left: 5px; margin-right: 5px;">
-            <p style = "font-size: 8pt; padding-left: 10px; padding-right: 30px"><b>${title}</b><button onclick = "closePopup('${id}')" style = "right:5px; position:absolute; top:5px">X</button></p>
+            <p style = "font-size: 8pt; padding-left: 10px; padding-right: 30px;" ><b>${title}</b><button onclick = "closePopup('${id}')" style = "right:5px; position:absolute; top:5px">X</button></p>
             <div style = "position:relative; top:5%; text-align:center; align-items:center" class = "popup-content">
                 <div style = "background-color:black">
                 <a href = "${link}">
