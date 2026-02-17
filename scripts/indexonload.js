@@ -1,3 +1,9 @@
+document.body.onload = ()=>{
+    setBg();
+    typeText();
+    loadPopUps();
+}
+
 function setBg(){
     //set random background image
     document.body.style.backgroundImage = `url('img/bg/bg${Math.ceil(Math.random() * 3)}.png')`;

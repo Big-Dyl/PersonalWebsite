@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  color: #111;
+  line-height: 1.6;
+  background-image: url("../img/bg/bg0liteTransparent.png");
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  background: #ececec;
+  overflow: hidden;
+  background-image: url("../img/bg/bg0.png");
+  opacity: 0.93;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.title {
+  display: inline-block;
+  color: #fff;
+  font-size: 50px;
+  letter-spacing: 10px;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.item {
+  padding: 30px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.date {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.view-more {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 8px 18px;
+  font-size: 13px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.view-more:hover {
+  background: #333;
+}
+
+.popup{
+    position:absolute;
+    background-color: darkgray;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    cursor:move;
+    touch-action: none;
+}
+
+.popup p{
+    font-family: "Pixelify Sans", sans-serif;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: white
+}
+
+.popup-content{
+    position:relative; 
+    top:5%; 
+    text-align:center; 
+    align-items:center;
+    border-radius: 10px;
+}
+
+button{
+    font-family: 'Pixelify Sans';
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer
+}
+
+.menu{
+    display: inline-block;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 14px;
+    
+}
+
+ul{
+   list-style-type: none;
+}
+
+.menu-content li{
+    &:hover{
+        transform: scale(1.1); 
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); 
+    }
+    transition: 
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+}
+
+.menu-content a{
+  font-size: clamp(12px, 4vw, 36px);
+  text-decoration: none;
+  color: white;
+}
+

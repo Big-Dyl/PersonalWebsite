@@ -2,6 +2,9 @@ let dragging = false;
 let draggedElement;
 let offsetX = 0; 
 let offsetY = 0;
+document.body.onload = ()=>{
+    if(document.getElementById("nav-popup") && window.innerWidth < window.innerHeight) closePopup('nav');
+}
 document.addEventListener("pointerup", (e)=>{
     dragging = false;
 });
@@ -10,11 +13,6 @@ document.addEventListener("pointermove",(e)=>{
     draggedElement.style.left = `${e.clientX - offsetX}px`;
     draggedElement.style.top = `${e.clientY - offsetY}px`;
 });
-document.body.onload = ()=>{
-    setBg();
-    typeText();
-    loadPopUps();
-}
 
 
 function createPopUp(img, link, title, text, posLeft, posTop, width, id){
@@ -22,7 +20,7 @@ function createPopUp(img, link, title, text, posLeft, posTop, width, id){
         <div style = "margin-left: 5px; margin-right: 5px;">
             <p style = "font-size: 8pt; padding-left: 10px; padding-right: 30px;" ><b>${title}</b><button onclick = "closePopup('${id}')" style = "right:5px; position:absolute; top:5px">X</button></p>
             <div style = "position:relative; top:5%; text-align:center; align-items:center" class = "popup-content">
-                <div style = "background-color:black">
+                <div style = "background-color:black; border-radius: 10px;">
                 <a href = "${link}">
                     ${img ? `<img src = ${img} style = "width:${width}; margin:5px;margin-bottom: 20px;">` : ''}
                     <p>${text}</p>

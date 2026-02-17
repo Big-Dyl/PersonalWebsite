@@ -1,0 +1,99 @@
+<head>
+<link rel="stylesheet" href = "stylesheets/style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="./img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.svg" />
+<link rel="shortcut icon" href="./img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Dylan Liu" />
+<link rel="manifest" href="./img/favicon/site.webmanifest" />
+<title>Dylan Liu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="logo">
+      <a href= "./index.html">
+        <img src = "./img/DylanLiu.png" style="width: 30%;">
+      </a>
+    </div>
+    <div class="title">MUSIC</div>
+  </div>
+</section>
+
+<section class="container">
+
+  <div class="item">
+    <div class="date">[date]</div>
+    <div class="headline">
+      headline
+    </div>
+    <a href="#" class="view-more">VIEW MORE</a>
+  </div>
+
+  <div class="item">
+    <div class="date">[date]</div>
+    <div class="headline">
+      headline
+    </div>
+    <a href="#" class="view-more">VIEW MORE</a>
+  </div>
+
+  <div class="item">
+    <div class="date">[date]</div>
+    <div class="headline">
+      headline
+    </div>
+    <a href="#" class="view-more">VIEW MORE</a>
+  </div>
+
+
+</section>
+<div id ="popups">
+  <div id = "nav-popup">
+    <div class = "popup" id = "nav" style = "left: 2%; top: 5%; max-width:30vw;"
+    onpointerdown="
+        const content = document.getElementById('nav');
+        offsetX = event.clientX - content.offsetLeft;
+        offsetY = event.clientY - content.offsetTop;
+        dragging = true;
+        draggedElement = content;
+    ">
+        <div style = "margin-left: 5px; margin-right: 5px;">
+            <p style = "padding-left: 10px; padding-right: 30px;" ><b>Menu</b><button onclick = "closePopup('nav')" style = "right:5px; position:absolute; top:5px">X</button></p>
+            <div style = "position:relative; top:5%; text-align:center; align-items:center" class = "popup-content">
+                <div style = "background-color:black; border-radius: 10px;">
+                <nav>
+                <div class = "menu">
+                    <ul class = "menu-content" id = "menu-content">
+                        <li><a href="index.html">TOP</a></li>
+                        <br>
+                        <li><a href="news.html">NEWS</a></li>
+                        <br>
+                        <li><a href = "about.html">ABOUT ME</a></li>
+                        <br>
+                        <li><a href = "games.html">GAMES</a></li>
+                        <br>
+                        <li><a href = "music.html">MUSIC</a></li>
+                        <br>
+                        <li><a href = "projects.html">PROJECTS</a></li>
+                        <br>
+                    </ul>
+                </div>
+            </nav>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+</body>
+</html>
+<script src ="scripts/popup.js"></script>

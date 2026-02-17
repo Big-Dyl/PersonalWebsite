@@ -10,7 +10,9 @@ body {
     padding: 0;
     overflow: hidden;
     position: fixed;
+    background-image: url("../img/bg/bg0.png");
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -19,9 +21,9 @@ a {
 ::-webkit-scrollbar {
     display: none;
 }
+
 .menu{
-    
-    display: inline-block
+    display: inline-block;
 }
 
 .menu-content li{
@@ -33,10 +35,12 @@ a {
       transform 0.2s ease,
       box-shadow 0.2s ease;
 }
+
 .header-container {
     position: relative;
     left: 10%
 }
+
 .sociallink{
     width:50px
 }
@@ -48,6 +52,14 @@ a {
     border-radius: 10px;
     cursor:move;
     touch-action: none;
+}
+
+.popup-content{
+    position:relative; 
+    top:5%; 
+    text-align:center; 
+    align-items:center;
+    border-radius: 10px;
 }
 
 button{
