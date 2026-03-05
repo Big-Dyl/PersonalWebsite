@@ -88,7 +88,7 @@ body {
 }
 
 .popup{
-    position:absolute;
+    position:fixed;
     background-color: darkgray;
     transition: transform 0.3s ease-in-out;
     border-radius: 10px;

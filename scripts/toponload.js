@@ -34,6 +34,8 @@ function typeText() {
         if (char >= totype[element].length) return type_next(element + 1, 0);
 
         target.textContent += totype[element].charAt(char);
+        if(totype[element].charAt(char) == " ") return type_next(element, char + 1);
+
         setTimeout(type_next, 75, element, char + 1);
     }
 }

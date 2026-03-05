@@ -11,6 +11,7 @@ body {
     overflow: hidden;
     position: fixed;
     background-image: url("../img/bg/bg0.png");
+    background-color: black;
 }
 
 a {
@@ -42,7 +43,8 @@ a {
 }
 
 .sociallink{
-    width:50px
+    width:50px;
+    padding: 5px;
 }
 
 .popup{
