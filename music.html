@@ -29,45 +29,139 @@
 </section>
 
 <section class="container">
-
-  <div class="item">
-    <div class="date">[date]</div>
-    <div class="headline">
-      headline
+  <div class = "container-popup">
+    <div id = "sort-popup">
+      <div class = "popup" id = "sort" style = "max-width:30vw;position:absolute;"
+      onpointerdown="
+          const sort_content = document.getElementById('sort');
+          offsetX = event.clientX - sort_content.offsetLeft;
+          offsetY = event.clientY - sort_content.offsetTop;
+          dragging = true;
+          draggedElement = sort_content;
+      ">
+          <div style = "margin-left: 5px; margin-right: 5px;">
+              <p style = "padding-left: 10px; padding-right: 30px;" ><b>SORT</b><button onclick = "closePopup('sort')" style = "right:5px; position:absolute; top:5px">X</button></p>
+              <div style = "position:relative; top:5%; text-align:center; align-items:center" class = "popup-content">
+                  <div style = "background-color:black; border-radius: 10px;" id = "select-wrapper">
+                  <select class="sortDropdown" onchange="sortPage()">
+                      <option value="recent">Recent</option>
+                      <option value="name">Name (A-Z)</option>
+                      <option value="best">Best</option>
+                  </select>
+                  </div>
+              </div>
+          </div>
+        </div>
     </div>
-    <a href="#" class="view-more">VIEW MORE</a>
+    <br>
+    <div style = "padding: 30px 0; border-bottom: 1px solid #ccc;"></div>
   </div>
 
-  <div class="item">
-    <div class="date">[date]</div>
-    <div class="headline">
-      headline
+
+  <div class = "container-items">
+    <div class="item" data-dylan_ranking = "4">
+      <div class="date">[September 11, 2024]</div>
+      <div class="headline">
+        ChaNaXinTiao
+      </div>
+      <div class = "video-container">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/1tFC5PgqRAA?si=PMfE3lLhUgeRrRgL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     </div>
-    <a href="#" class="view-more">VIEW MORE</a>
+    <div class="item" data-dylan_ranking = "1">
+      <div class="date">[November 22, 2023]</div>
+      <div class="headline">
+        Destroyers
+      </div>
+      <div class = "video-container">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/yaj0bVfBuGs?si=PgZYMQKySsDR2f1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="item" data-dylan_ranking = "6">
+      <div class="date">[August 7, 2023]</div>
+      <div class="headline">
+        Pathway To Paradise
+      </div>
+      <div class = "video-container">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/Nbfi48uEq3w?si=gqdlPDrf8x1gFrCk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="item" data-dylan_ranking = "9">
+      <div class="date">[March 24, 2023]</div>
+      <div class="headline">
+        Murmur
+      </div>
+      <div class = "video-container">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/HwZp70tdBL8?si=JEmQr3Lkhnjxn_Sg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+     <div class="item" data-dylan_ranking = "3">
+      <div class="date">[September 28, 2022]</div>
+      <div class="headline">
+        An Adventure Admist The Skies
+      </div>
+      <div class = "video-container">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/-bobyBZjdLk?si=36kTTn-3f9tab-kUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="item" data-dylan_ranking = "5">
+      <div class="date">[June 15, 2022]</div>
+      <div class="headline">
+        A Forest Festival
+      </div>
+      <div class = "video-container">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/OJFC8UL58yg?si=3_X0YaS4aIBmOqFQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="item" data-dylan_ranking = "8">
+      <div class="date">[April 24, 2022]</div>
+      <div class="headline">
+        Set Sail
+      </div>
+      <div class = "video-container">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/n21Yu8SmqCY?si=mmECW6_w5G6h6_k4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="item" data-dylan_ranking = "6">
+      <div class="date">[April 3, 2022]</div>
+      <div class="headline">
+        An Empty Town
+      </div>
+      <div class = "video-container">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/QRIdBllddNo?si=TzsHb1u7aqTuI8XS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="item" data-dylan_ranking = "7">
+      <div class="date">[March 19, 2022]</div>
+      <div class="headline">
+        Showdown in The Sands
+      </div>
+      <div class = "video-container">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/qPpvBHnzegk?si=W5mnLFKy2-jXnCrm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="item" data-dylan_ranking = "2">
+      <div class="date">[March 5, 2022]</div>
+      <div class="headline">
+        There Is No Sunset
+      </div>
+      <div class = "video-container">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/TYonS5Tydpk?si=F6fuZl6f_A9LhQiT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
   </div>
-
-  <div class="item">
-    <div class="date">[date]</div>
-    <div class="headline">
-      headline
-    </div>
-    <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/TYonS5Tydpk?si=F6fuZl6f_A9LhQiT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-
-  </div>
-
-
 </section>
 <div id ="popups">
   <div id = "nav-popup">
-    <div class = "popup" id = "nav" style = "left: 2%; top: 5%; max-width:30vw;"
+    <div class = "popup" id = "nav" style = "left: 2%; top: 5%; max-width:30vw; position:fixed;"
     onpointerdown="
-        const content = document.getElementById('nav');
-        offsetX = event.clientX - content.offsetLeft;
-        offsetY = event.clientY - content.offsetTop;
+        const nav_content = document.getElementById('nav');
+        offsetX = event.clientX - nav_content.offsetLeft;
+        offsetY = event.clientY - nav_content.offsetTop;
         dragging = true;
-        draggedElement = content;
+        draggedElement = nav_content;
     ">
         <div style = "margin-left: 5px; margin-right: 5px;">
             <p style = "padding-left: 10px; padding-right: 30px;" ><b>Menu</b><button onclick = "closePopup('nav')" style = "right:5px; position:absolute; top:5px">X</button></p>
@@ -100,3 +194,4 @@
 </body>
 </html>
 <script src ="scripts/popup.js"></script>
+<script src ="scripts/index.js"></script>

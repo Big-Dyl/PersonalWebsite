@@ -29,42 +29,72 @@
 </section>
 
 <section class="container">
-
-  <div class="item">
-    <div class="date">[date]</div>
-    <div class="headline">
-      headline
+  <div class = "container-popup">
+    <div id = "sort-popup">
+      <div class = "popup" id = "sort" style = "max-width:30vw;position:absolute;"
+      onpointerdown="
+          const sort_content = document.getElementById('sort');
+          offsetX = event.clientX - sort_content.offsetLeft;
+          offsetY = event.clientY - sort_content.offsetTop;
+          dragging = true;
+          draggedElement = sort_content;
+      ">
+          <div style = "margin-left: 5px; margin-right: 5px;">
+              <p style = "padding-left: 10px; padding-right: 30px;" ><b>SORT</b><button onclick = "closePopup('sort')" style = "right:5px; position:absolute; top:5px">X</button></p>
+              <div style = "position:relative; top:5%; text-align:center; align-items:center" class = "popup-content">
+                  <div style = "background-color:black; border-radius: 10px;" id = "select-wrapper">
+                  <select class="sortDropdown" onchange="sortPage()">
+                      <option value="recent">Recent</option>
+                      <option value="name">Name (A-Z)</option>
+                      <option value="best">Best</option>
+                  </select>
+                  </div>
+              </div>
+          </div>
+        </div>
     </div>
-    <a href="#" class="view-more">VIEW MORE</a>
+    <br>
+    <div style = "padding: 30px 0; border-bottom: 1px solid #ccc;"></div>
   </div>
 
-  <div class="item">
-    <div class="date">[date]</div>
-    <div class="headline">
-      headline
+
+  <div class = "container-items">
+    <div class="item" data-dylan_ranking="1">
+  <div class="date">[March 6, 2026]</div>
+
+  <div class="headline">
+    JAYSON TATUM IS BACK
+
+    <div class="video-container">
+      <div class="tenor-gif-embed" data-postid="303655201590180371" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/jayson-tatum-i-see-how-it-is-wowww-okay-nods-gif-303655201590180371">Jayson Tatum I See How It Is GIF</a>from<a href="https://tenor.com/search/jayson+tatum-gifs">Jayson Tatum GIFs</a></div><script async src="https://tenor.com/embed.js"></script>
     </div>
-    <a href="#" class="view-more">VIEW MORE</a>
+    <p class="subtext">HHHHUUUUUUGGGGGGEEEEEEEEEEEE</p>
   </div>
+  <a href="https://www.espn.com/nba/game/_/gameId/401810763/mavericks-celtics" class="view-more">VIEW MORE</a>
+</div>
 
-  <div class="item">
-    <div class="date">[date]</div>
-    <div class="headline">
-      headline
+    <div class="item" data-dylan_ranking = "2">
+      <div class="date">[March 6, 2026]</div>
+        <div class="headline">
+          Initial deployment of dylanliu.net!!!
+          <p class="subtext">
+            check back here for updates
+          </p>
+        </div>
+        <a href="../index.html" class="view-more">VIEW MORE</a>
+      </div>
     </div>
-    <a href="#" class="view-more">VIEW MORE</a>
   </div>
-
-
 </section>
 <div id ="popups">
   <div id = "nav-popup">
-    <div class = "popup" id = "nav" style = "left: 2%; top: 5%; max-width:30vw;"
+    <div class = "popup" id = "nav" style = "left: 2%; top: 5%; max-width:30vw; position:fixed;"
     onpointerdown="
-        const content = document.getElementById('nav');
-        offsetX = event.clientX - content.offsetLeft;
-        offsetY = event.clientY - content.offsetTop;
+        const nav_content = document.getElementById('nav');
+        offsetX = event.clientX - nav_content.offsetLeft;
+        offsetY = event.clientY - nav_content.offsetTop;
         dragging = true;
-        draggedElement = content;
+        draggedElement = nav_content;
     ">
         <div style = "margin-left: 5px; margin-right: 5px;">
             <p style = "padding-left: 10px; padding-right: 30px;" ><b>Menu</b><button onclick = "closePopup('nav')" style = "right:5px; position:absolute; top:5px">X</button></p>
@@ -97,3 +127,4 @@
 </body>
 </html>
 <script src ="scripts/popup.js"></script>
+<script src ="scripts/index.js"></script>

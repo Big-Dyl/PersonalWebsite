@@ -67,7 +67,7 @@ body {
 }
 
 .headline {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   margin-bottom: 18px;
 }
@@ -88,12 +88,12 @@ body {
 }
 
 .popup{
-    position:fixed;
     background-color: darkgray;
     transition: transform 0.3s ease-in-out;
     border-radius: 10px;
     cursor:move;
     touch-action: none;
+    padding-bottom: 5px;
 }
 
 .popup p{
@@ -148,3 +148,46 @@ ul{
   color: white;
 }
 
+.video-container {
+  border-radius: 10px;
+  background-color: #000;
+  text-align: center;
+  padding: 5%
+}
+
+.sortDropdown{
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: black;
+  cursor: pointer;
+  color:white;
+  font-family: "Pixelify Sans", sans-serif;
+  border-color: black;
+  width: 100%;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+#select-wrapper::after {
+  content: "v"; /* or any character/emoji */
+  font-family: "Pixelify Sans", sans-serif;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+  pointer-events: none; /* lets clicks pass through to the select */
+}
+.subtext{
+  font-size: 16px;
+  color: #555;
+}
