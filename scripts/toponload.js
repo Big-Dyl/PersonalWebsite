@@ -45,11 +45,11 @@ async function loadPopUps(){
     createPopUp("img/music/destroyers.png","music.html#destroyers","Music: new song 'Destroyers'", '', 0.1 * Math.random() *  window.innerWidth + 0.65 * window.innerWidth, (Math.random() * 0.1 + 0.1) * window.innerHeight , "80%", "1");
     setTimeout(()=>{
         //Load newest Project Popup
-        createPopUp("img/projects/ChopstixSolver.jpg","projects.html","Projects: 'check out Chopstix Solver'", '', 0.1 * Math.random() * window.innerWidth + 0.4 * window.innerWidth, (Math.random() * 0.1 + 0.35) * window.innerHeight, "80%", "2");
+        createPopUp("img/projects/ChopstixSolverSmall.jpg","projects.html#chopsticks","Projects: 'check out Chopstix Solver'", '', 0.1 * Math.random() * window.innerWidth + 0.4 * window.innerWidth, (Math.random() * 0.1 + 0.35) * window.innerHeight, "80%", "2");
     }, 500)
     setTimeout(()=>{
         //Load Games Popup
-        createPopUp("img/projects/SpeedStreets.jpg","games.html","Games: play 'Speed Streets'", '', 0.1 * Math.random() * window.innerWidth + 0.65 * window.innerWidth, (Math.random() * 0.1 + 0.6) * window.innerHeight, "80%","3");
+        createPopUp("img/projects/SpeedStreetsSmall.jpg","games.html#speedstreets","Games: play 'Speed Streets'", '', 0.1 * Math.random() * window.innerWidth + 0.65 * window.innerWidth, (Math.random() * 0.1 + 0.6) * window.innerHeight, "80%","3");
     }, 1000)
 }
 
