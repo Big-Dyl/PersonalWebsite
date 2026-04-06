@@ -42,7 +42,7 @@ function typeText() {
 
 async function loadPopUps(){
     //Load newest Music Popup
-    createPopUp("img/music/destroyers.png","music.html#destroyers","Music: new song 'Destroyers'", '', 0.1 * Math.random() *  window.innerWidth + 0.65 * window.innerWidth, (Math.random() * 0.1 + 0.1) * window.innerHeight , "80%", "1");
+    createPopUp("img/music/flames-small.png","music.html#flames","Music: new song 'Flames'", '', 0.1 * Math.random() *  window.innerWidth + 0.65 * window.innerWidth, (Math.random() * 0.1 + 0.1) * window.innerHeight , "80%", "1");
     setTimeout(()=>{
         //Load newest Project Popup
         createPopUp("img/projects/ChopstixSolverSmall.jpg","projects.html#chopsticks","Projects: 'check out Chopstix Solver'", '', 0.1 * Math.random() * window.innerWidth + 0.4 * window.innerWidth, (Math.random() * 0.1 + 0.35) * window.innerHeight, "80%", "2");
