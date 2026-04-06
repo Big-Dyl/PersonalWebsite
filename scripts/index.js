@@ -14,6 +14,10 @@ function sortPage(){
         items.sort((a, b)=>{
             return parseInt(a.dataset.dylan_ranking) - parseInt(b.dataset.dylan_ranking);
         })
+    } else if(sortBy === "oldest"){
+        items.sort((b, a)=>{
+            return new Date(b.querySelector(".date").innerHTML.slice(1, -1)) - new Date(a.querySelector(".date").innerHTML.slice(1, -1));
+        })
     }
     content.innerHTML = "";
     for(const i of items){

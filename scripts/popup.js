@@ -2,9 +2,9 @@ let dragging = false;
 let draggedElement;
 let offsetX = 0; 
 let offsetY = 0;
-document.body.onload = ()=>{
-    if(document.getElementById("nav-popup") && window.innerWidth < window.innerHeight) closePopup('nav');
-}
+
+if(document.getElementById("nav-popup") && window.innerWidth < window.innerHeight) closePopup('nav');
+
 document.addEventListener("pointerup", (e)=>{
     dragging = false;
 });
@@ -46,9 +46,10 @@ function createPopUp(img, link, title, text, posLeft, posTop, width, id){
 
 function closePopup(id){
     const popup = document.getElementById(id);
+    const button = popup.querySelector("button");
+    if(button.innerHTML == "+") return;
     const popupContent = popup.querySelector(".popup-content");
     const content = popup.innerHTML;
-    const button = popup.querySelector("button");
     button.innerHTML = "+";
     button.onclick = ()=>{openPopup(id, content)};
     popupContent.innerHTML = "";
@@ -57,6 +58,7 @@ function closePopup(id){
 function openPopup(id, content){
     const popup = document.getElementById(id);
     const button = popup.querySelector("button");
+    if(button.innerHTML == "X") return;
     button.innerHTML = "X"
     button.onclick = closePopup(id);
     popup.innerHTML = content;
