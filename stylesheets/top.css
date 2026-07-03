@@ -74,7 +74,9 @@ button{
     background-color: black;
     color: white;
     border-radius: 10px;
-    cursor: pointer
+    cursor: pointer;
+    min-height: 22px;
+    min-width: 22px;
 }
 
 p{
