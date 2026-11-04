@@ -188,19 +188,19 @@ select {
   -moz-appearance: none;
 }
 #select-wrapper::after {
-  content: "v"; /* or any character/emoji */
+  content: "v";
   font-family: "Pixelify Sans", sans-serif;
   position: absolute;
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
   color: #ccc;
-  pointer-events: none; /* lets clicks pass through to the select */
+  pointer-events: none;
 }
 
 .subtext{
   font-size: 16px;
-  color: #555;
+  color: #363636;
 }
 
 a {
