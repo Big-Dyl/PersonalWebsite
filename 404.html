@@ -1,0 +1,92 @@
+<head>
+<link rel="stylesheet" href = "stylesheets/style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="./img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.svg" />
+<link rel="shortcut icon" href="./img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="undefined" />
+<meta name="author" content="Dylan Liu">
+<meta name="description" content="undefined">
+<meta name="og:title" content="Not Found">
+<meta name="og:description" content="undefined">
+<link rel="manifest" href="./img/favicon/site.webmanifest" />
+<title>Not Found</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="logo">
+      <a href= "./index.html">
+        <img src = "./img/DylanLiu.png" style="width: 30%;">
+      </a>
+    </div>
+    <div class="title">??????</div>
+  </div>
+</section>
+
+<section class="container">
+  <div class = "container-items" style="text-align: center;">
+    <div class = "video-container">
+            <div class = "title" style="font-size:30pt">Ur lost lmao!</div>
+            <div class = "subtext" style="color:#fff">(This page doesn't exist!)</div>
+            <br>
+            <button onclick="window.location.href='..'" style = "font-size:30pt;padding-left: 5%;padding-right: 5%;">TOP
+    </div>
+  </div>
+</section>
+<section class = "foot">
+    <div>
+        © 2026 Dylan Liu - All rights reserved <br> <a href = "about.html#contact-me">Contact</a> • <a href = "https://github.com/Big-Dyl/PersonalWebsite">Website Source</a>
+    </div>
+</section>
+<div id ="popups">
+  <div id = "nav-popup">
+    <div class = "popup" id = "nav" style = "left: 2%; top: 5%; max-width:30vw; position:fixed;"
+    onpointerdown="
+        const nav_content = document.getElementById('nav');
+        offsetX = event.clientX - nav_content.offsetLeft;
+        offsetY = event.clientY - nav_content.offsetTop;
+        dragging = true;
+        draggedElement = nav_content;
+    ">
+        <div style = "margin-left: 5px; margin-right: 5px;">
+            <p style = "padding-left: 10px; padding-right: 30px;" ><b>MENU</b><button onclick = "closePopup('nav')" style = "right:5px; position:absolute; top:5px">X</button></p>
+            <div style = "position:relative; top:5%; text-align:center; align-items:center" class = "popup-content">
+                <div style = "background-color:black; border-radius: 10px;">
+                <nav>
+                <div class = "menu">
+                    <ul class = "menu-content" id = "menu-content">
+                        <li><a href="index.html">TOP</a></li>
+                        <br>
+                        <li><a href="news.html">NEWS</a></li>
+                        <br>
+                        <li><a href = "about.html">ABOUT ME</a></li>
+                        <br>
+                        <li><a href = "games.html">GAMES</a></li>
+                        <br>
+                        <li><a href = "music.html">MUSIC</a></li>
+                        <br>
+                        <li><a href = "projects.html">PROJECTS</a></li>
+                        <br>
+                    </ul>
+                </div>
+            </nav>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+</body>
+</html>
+<script src="https://cdnjs.com/libraries/pdf.js"></script>
+<script src ="scripts/popup.js"></script>
+<script src ="scripts/index.js"></script>
