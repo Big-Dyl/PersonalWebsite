@@ -1,7 +1,7 @@
 document.body.onload = ()=>{
     setBg();
     typeText();
-    loadPopUps();
+    if (typeof loadPopUps === "function") loadPopUps();
 }
 
 function setBg(){

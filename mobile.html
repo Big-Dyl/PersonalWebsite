@@ -34,8 +34,7 @@
 
 <section class="container">
   <div class = "container-popup">
-    <div class = "popup" id = "nav" style = "min-width:90vw; position: relative;"
-      onpointerdown="startDrag(event, document.getElementById('nav'))">
+    <div class = "popup" id = "nav" style = "min-width:90vw; position: relative;">
           <div style = "margin-left: 5px; margin-right: 5px;">
             <p style = "padding-left: 10px; padding-right: 30px;" ><b>MENU</b><button onclick = "closePopup('nav')" style = "right:5px; position:absolute; top:5px">X</button></p>
             <div style = "position:relative; top:5%;" class = "popup-content">
@@ -79,6 +78,42 @@
         <p>SOME NEW-ISH STUFF I'VE MADE</p>
         <span class="tag-newish">NEW-ISH!</span>
     </div>
+    <div class = "popup" id = "1">
+          <div style = "margin-left: 5px; margin-right: 5px;">
+            <p class = "mobile-popup-title"><b>Music: new song 'Flames'</b><button onclick = "closePopup('1')" style = "right:5px; position:absolute; top:5px">X</button></p>
+            <div style = "position:relative; top:5%; text-align:center; align-items:center" class = "popup-content">
+                <div style = "background-color:black; border-radius: 10px;">
+                    <a href = "music.html#flames">
+                        <img src = "img/music/flames-small.png" style = "width:80%; margin:5px;margin-bottom: 20px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "popup" id = "2">
+          <div style = "margin-left: 5px; margin-right: 5px;">
+            <p class = "mobile-popup-title"><b>Projects: 'check out Chopstix Solver'</b><button onclick = "closePopup('2')" style = "right:5px; position:absolute; top:5px">X</button></p>
+            <div style = "position:relative; top:5%; text-align:center; align-items:center" class = "popup-content">
+                <div style = "background-color:black; border-radius: 10px;">
+                    <a href = "projects.html#chopsticks">
+                        <img src = "img/projects/ChopstixSolverSmall.jpg" style = "width:80%; margin:5px;margin-bottom: 20px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "popup" id = "3">
+          <div style = "margin-left: 5px; margin-right: 5px;">
+            <p class = "mobile-popup-title"><b>Games: play 'Speed Streets'</b><button onclick = "closePopup('3')" style = "right:5px; position:absolute; top:5px">X</button></p>
+            <div style = "position:relative; top:5%; text-align:center; align-items:center" class = "popup-content">
+                <div style = "background-color:black; border-radius: 10px;">
+                    <a href = "games.html#speedstreets">
+                        <img src = "img/projects/SpeedStreetsSmall.jpg" style = "width:80%; margin:5px;margin-bottom: 20px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </section>
 <section class = "foot">
@@ -86,29 +121,12 @@
         <p>© 2026 Dylan Liu</p>
     </div>
 </section>
+<script src ="scripts/popup.js"></script>
+<script>
+    closePopup("1");
+    closePopup("2");
+    closePopup("3");
+</script>
+<script src="scripts/toponload.js"></script>
 </body>
 </html>
-
-<script src ="scripts/popup.js"></script>
-<script src="scripts/toponload.js"></script>
-<script>
-async function loadPopUps() {
-    const anchor = document.getElementsByClassName("tag-newish")[0];
-    const belowY = (anchor.getBoundingClientRect().bottom + window.scrollY)/window.innerHeight;
-    // Newest Music popup
-    let p = spawnPos(0.35, belowY + 0.10, 0, 0);
-    createPopUp("img/music/flames-small.png", "music.html#flames", "Music: new song 'Flames'", '', p.left, p.top, "80%", "1");
-
-    setTimeout(() => {
-        // Newest Project popup
-        const p = spawnPos(0.10, belowY + 0.20, 0, 0);
-        createPopUp("img/projects/ChopstixSolverSmall.jpg", "projects.html#chopsticks", "Projects: 'check out Chopstix Solver'", '', p.left, p.top, "80%", "2");
-    }, 500);
-
-    setTimeout(() => {
-        // Games popup
-        const p = spawnPos(0.55, belowY + 0.30, 0 ,0);
-        createPopUp("img/projects/SpeedStreetsSmall.jpg", "games.html#speedstreets", "Games: play 'Speed Streets'", '', p.left, p.top, "80%", "3");
-    }, 1000);
-}
-</script>
