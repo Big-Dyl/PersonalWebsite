@@ -36,13 +36,7 @@
   <div class = "container-popup">
     <div id = "sort-popup">
       <div class = "popup" id = "sort" style = "max-width:30vw;position:absolute;"
-      onpointerdown="
-          const sort_content = document.getElementById('sort');
-          offsetX = event.clientX - sort_content.offsetLeft;
-          offsetY = event.clientY - sort_content.offsetTop;
-          dragging = true;
-          draggedElement = sort_content;
-      ">
+      onpointerdown="startDrag(event, document.getElementById('sort'))">
           <div style = "margin-left: 5px; margin-right: 5px;">
               <p style = "padding-left: 10px; padding-right: 30px;" ><b>SORT</b><button onclick = "closePopup('sort')" style = "right:5px; position:absolute; top:5px">X</button></p>
               <div style = "position:relative; top:5%; text-align:center; align-items:center" class = "popup-content">
@@ -127,13 +121,7 @@
 <div id ="popups">
   <div id = "nav-popup">
     <div class = "popup" id = "nav" style = "left: 2%; top: 5%; max-width:30vw; position:fixed;"
-    onpointerdown="
-        const nav_content = document.getElementById('nav');
-        offsetX = event.clientX - nav_content.offsetLeft;
-        offsetY = event.clientY - nav_content.offsetTop;
-        dragging = true;
-        draggedElement = nav_content;
-    ">
+    onpointerdown="startDrag(event, document.getElementById('nav'));">
         <div style = "margin-left: 5px; margin-right: 5px;">
             <p style = "padding-left: 10px; padding-right: 30px;" ><b>MENU</b><button onclick = "closePopup('nav')" style = "right:5px; position:absolute; top:5px">X</button></p>
             <div style = "position:relative; top:5%; text-align:center; align-items:center" class = "popup-content">

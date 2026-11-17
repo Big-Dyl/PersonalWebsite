@@ -1,18 +1,34 @@
-let dragging = false;
-let draggedElement;
-let offsetX = 0; 
-let offsetY = 0;
-
 if(document.getElementById("nav-popup") && window.innerWidth < window.innerHeight) closePopup('nav');
 
-document.addEventListener("pointerup", (e)=>{
-    dragging = false;
-});
-document.addEventListener("pointermove",(e)=>{
+let dragging = false;
+let draggedElement;
+let startX = 0, startY = 0;
+let startLeft = 0, startTop = 0;
+
+const NO_DRAG = "select, option, input, textarea, button, a, label";
+
+function startDrag(e, el) {
+    if (e.button !== 0) return;                 // left button only
+    if (e.target.closest(NO_DRAG)) return;      // don't drag from controls
+
+    startX = e.clientX;
+    startY = e.clientY;
+    const style = getComputedStyle(el);
+    startLeft = parseFloat(style.left) || 0;
+    startTop  = parseFloat(style.top)  || 0;
+    dragging = true;
+    draggedElement = el;
+}
+
+document.addEventListener("pointermove", (e) => {
     if (!draggedElement || !dragging) return;
-    draggedElement.style.left = `${e.clientX - offsetX}px`;
-    draggedElement.style.top = `${e.clientY - offsetY}px`;
+    if (e.buttons === 0) { dragging = false; return; }   // safety net for a lost pointerup
+    draggedElement.style.left = `${startLeft + (e.clientX - startX)}px`;
+    draggedElement.style.top  = `${startTop  + (e.clientY - startY)}px`;
 });
+
+document.addEventListener("pointerup", () => { dragging = false; });
+document.addEventListener("pointercancel", () => { dragging = false; });
 
 
 function createPopUp(img, link, title, text, posLeft, posTop, width, id){
@@ -32,12 +48,7 @@ function createPopUp(img, link, title, text, posLeft, posTop, width, id){
     const popup = document.createElement('div');
     popup.innerHTML = popupTemplate;
     const content = popup.getElementsByClassName("popup")[0]
-    content.addEventListener('pointerdown', (e) => {
-        offsetX = e.clientX - content.offsetLeft;
-        offsetY = e.clientY - content.offsetTop;
-        dragging = true;
-        draggedElement = content;
-    });
+    content.addEventListener('pointerdown', (e) => startDrag(e, content));
         setTimeout(()=>{
         content.style.transform = "scale(1.5, 1.5)";
     },10); 
@@ -60,6 +71,6 @@ function openPopup(id, content){
     const button = popup.querySelector("button");
     if(button.innerHTML == "X") return;
     button.innerHTML = "X"
-    button.onclick = closePopup(id);
+    button.onclick = () => closePopup(id);
     popup.innerHTML = content;
 }
