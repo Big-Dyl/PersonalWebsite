@@ -122,6 +122,9 @@
 </section>
 <script src ="scripts/popup.js"></script>
 <script>
+    if(window.innerWidth >= window.innerHeight){
+        window.location.href = "/";
+    }
     closePopup("1");
     closePopup("2");
     closePopup("3");
