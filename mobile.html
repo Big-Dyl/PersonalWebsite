@@ -1,0 +1,121 @@
+<head>
+<link rel="stylesheet" href = "stylesheets/mobile.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="./img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.svg" />
+<link rel="shortcut icon" href="./img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Dylan Liu" />
+<meta name="description" content="Big-Dyl's Big Website">
+<meta name="author" content="Dylan Liu">
+<meta property="og:title" content="Dylan Liu: Music">
+<meta property="og:description" content="Big-Dyl's Big Website">
+<link rel="manifest" href="./img/favicon/site.webmanifest" />
+<title>Dylan Liu: Music</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<section class="hero">
+    <div>
+      <a href= "./index.html">
+        <img src = "./img/DylanLiu.png" style="width: 50%">
+      </a>
+    </div>
+    <div class="title">TOP</div>
+</section>
+
+<section class="container">
+  <div class = "container-popup">
+    <div class = "popup" id = "nav" style = "min-width:90vw; position: relative;"
+      onpointerdown="startDrag(event, document.getElementById('nav'))">
+          <div style = "margin-left: 5px; margin-right: 5px;">
+            <p style = "padding-left: 10px; padding-right: 30px;" ><b>MENU</b><button onclick = "closePopup('nav')" style = "right:5px; position:absolute; top:5px">X</button></p>
+            <div style = "position:relative; top:5%;" class = "popup-content">
+                <div style = "background-color:black; border-radius: 10px;">
+                <nav>
+                <div class = "menu">
+                    <ul class = "menu-content" id = "menu-content">
+                        <li><a href="index.html">TOP</a></li>
+                        <li><a href="news.html">NEWS</a></li>
+                        <li><a href = "about.html">ABOUT ME</a></li>
+                        <li><a href = "games.html">GAMES</a></li>
+                        <li><a href = "music.html">MUSIC</a></li>
+                        <li><a href = "projects.html">PROJECTS</a></li>
+                    </ul>
+                </div>
+            </nav>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; padding-top: 5px;">
+            <a href = "https://github.com/Big-Dyl">
+                <img class = "sociallink" alt="GitHub" title="GitHub" src="./img/social_link_icons/github_logo_icon.png">
+            </a>
+            <a href = "https://www.youtube.com/@Fowligence">
+                <img class = "sociallink" alt="Youtube" title="Youtube" src="./img/social_link_icons/youtube_logo_icon.png">
+            </a>
+            
+            <a href = "https://www.linkedin.com/in/dylanliu11/">
+                <img class = "sociallink" alt="Linkedin" title="Linkedin" src="./img/social_link_icons/linked_in_logo_icon.png">
+            </a>
+            <a href = "https://x.com/MassiveDyl">
+                <img class = "sociallink" alt="X" title="X" src="./img/social_link_icons/x_logo_icon.png">
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+  <div class = "container-items">
+    <div class="item">
+        <p>SOME NEW-ISH STUFF I'VE MADE</p>
+        <span class="tag-newish">NEW-ISH!</span>
+    </div>
+</div>
+</section>
+<section class = "foot">
+    <div class="copyright">
+            <p>© 2026 Dylan Liu</p>
+    </div>
+</section>
+<div id = "popups">
+</div>
+</body>
+</html>
+
+<script src ="scripts/popup.js"></script>
+<script src="scripts/toponload.js"></script>
+<script>
+function spawnPos(fx, fy, noiseX = 0.03, noiseY = 0.02) {
+    const x = (fx + (Math.random() * 2 - 1) * noiseX) * window.innerWidth;
+    const y = (fy + (Math.random() * 2 - 1) * noiseY) * window.innerHeight;
+    return {
+        left: `${Math.max(0, Math.min(x, window.innerWidth))}px`,
+        top:  `${Math.max(0, Math.min(y, window.innerHeight))}px`
+    };
+}
+
+async function loadPopUps() {
+    // Newest Music popup
+    let p = spawnPos(0.35, 0.65);
+    createPopUp("img/music/flames-small.png", "music.html#flames", "Music: new song 'Flames'", '', p.left, p.top, "80%", "1");
+
+    setTimeout(() => {
+        // Newest Project popup
+        const p = spawnPos(0.10, 0.73);
+        createPopUp("img/projects/ChopstixSolverSmall.jpg", "projects.html#chopsticks", "Projects: 'check out Chopstix Solver'", '', p.left, p.top, "80%", "2");
+    }, 500);
+
+    setTimeout(() => {
+        // Games popup
+        const p = spawnPos(0.55, 0.81);
+        createPopUp("img/projects/SpeedStreetsSmall.jpg", "games.html#speedstreets", "Games: play 'Speed Streets'", '', p.left, p.top, "80%", "3");
+    }, 1000);
+}
+</script>

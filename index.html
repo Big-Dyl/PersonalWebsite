@@ -65,6 +65,26 @@
         </div>
     </div>
 </body>
+<script>
+
+    async function loadPopUps() {
+        // Load newest Music Popup
+        let p = spawnPos(0.65, 0.1);
+        createPopUp("img/music/flames-small.png", "music.html#flames", "Music: new song 'Flames'", '', p.left, p.top, "80%", "1");
+
+        setTimeout(() => {
+            // Load newest Project Popup
+            const p = spawnPos(0.4, 0.35);
+            createPopUp("img/projects/ChopstixSolverSmall.jpg", "projects.html#chopsticks", "Projects: 'check out Chopstix Solver'", '', p.left, p.top, "80%", "2");
+        }, 500);
+
+        setTimeout(() => {
+            // Load Games Popup
+            const p = spawnPos(0.65, 0.6);
+            createPopUp("img/projects/SpeedStreetsSmall.jpg", "games.html#speedstreets", "Games: play 'Speed Streets'", '', p.left, p.top, "80%", "3");
+        }, 1000);
+    }
+</script>
 <script src ="scripts/popup.js"></script>
 <script src ="scripts/toponload.js"></script>
 

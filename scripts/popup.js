@@ -74,3 +74,12 @@ function openPopup(id, content){
     button.onclick = () => closePopup(id);
     popup.innerHTML = content;
 }
+
+function spawnPos(fx, fy, noiseX = 0.1, noiseY = 0.1) {
+    const x = (fx + (Math.random() * 2 - 1) * noiseX) * window.innerWidth;
+    const y = (fy + (Math.random() * 2 - 1) * noiseY) * window.innerHeight;
+    return {
+        left: `${Math.max(0, Math.min(x, window.innerWidth))}px`,
+        top:  `${Math.max(0, Math.min(y, window.innerHeight))}px`
+    };
+}
