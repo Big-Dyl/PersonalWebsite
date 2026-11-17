@@ -67,9 +67,7 @@ body {
     background-color:gray;
     transition: transform 0.3s ease-in-out;
     border-radius: 10px;
-    touch-action: none;
     padding-bottom: 5px;
-    pointer-events: auto;
 }
 
 .container-items > .popup {
@@ -89,7 +87,6 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  pointer-events: none;
   z-index: 10;
 }
 
