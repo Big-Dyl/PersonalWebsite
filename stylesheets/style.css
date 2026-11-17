@@ -96,7 +96,7 @@ body {
 }
 
 .popup{
-    background-color: darkgray;
+    background-color: gray;
     transition: transform 0.3s ease-in-out;
     border-radius: 10px;
     cursor:move;

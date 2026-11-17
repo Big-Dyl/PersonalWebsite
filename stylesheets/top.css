@@ -14,6 +14,10 @@ body {
     background-color: black;
 }
 
+.copyright{
+    opacity: 50%;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -54,7 +58,7 @@ a {
 
 .popup{
     position:absolute;
-    background-color: darkgray;
+    background-color: gray;
     transition: transform 0.3s ease-in-out;
     border-radius: 10px;
     cursor:move;
