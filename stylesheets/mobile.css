@@ -69,6 +69,20 @@ body {
     cursor:move;
     touch-action: none;
     padding-bottom: 5px;
+    pointer-events: auto;
+}
+
+#popups {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#popup-space {
+  height: 0;
 }
 
 
@@ -202,7 +216,5 @@ p{
 }
 
 .copyright{
-  position: absolute;
-    bottom: 5%;
     opacity: 50%;
 }

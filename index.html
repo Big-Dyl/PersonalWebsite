@@ -66,15 +66,18 @@
     </div>
 </body>
 <script>
+    if(window.innerWidth < window.innerHeight){
+        window.location.href = "./mobile.html";
+    }
 
     async function loadPopUps() {
         // Load newest Music Popup
-        let p = spawnPos(0.65, 0.1);
+        let p = spawnPos(0.65, 0.15);
         createPopUp("img/music/flames-small.png", "music.html#flames", "Music: new song 'Flames'", '', p.left, p.top, "80%", "1");
 
         setTimeout(() => {
             // Load newest Project Popup
-            const p = spawnPos(0.4, 0.35);
+            const p = spawnPos(0.45, 0.35);
             createPopUp("img/projects/ChopstixSolverSmall.jpg", "projects.html#chopsticks", "Projects: 'check out Chopstix Solver'", '', p.left, p.top, "80%", "2");
         }, 500);
 

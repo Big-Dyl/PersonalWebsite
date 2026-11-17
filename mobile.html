@@ -21,6 +21,8 @@
 
 <body>
 
+<div id="popups"></div>
+
 <section class="hero">
     <div>
       <a href= "./index.html">
@@ -81,40 +83,31 @@
 </section>
 <section class = "foot">
     <div class="copyright">
-            <p>© 2026 Dylan Liu</p>
+        <p>© 2026 Dylan Liu</p>
     </div>
 </section>
-<div id = "popups">
-</div>
 </body>
 </html>
 
 <script src ="scripts/popup.js"></script>
 <script src="scripts/toponload.js"></script>
 <script>
-function spawnPos(fx, fy, noiseX = 0.03, noiseY = 0.02) {
-    const x = (fx + (Math.random() * 2 - 1) * noiseX) * window.innerWidth;
-    const y = (fy + (Math.random() * 2 - 1) * noiseY) * window.innerHeight;
-    return {
-        left: `${Math.max(0, Math.min(x, window.innerWidth))}px`,
-        top:  `${Math.max(0, Math.min(y, window.innerHeight))}px`
-    };
-}
-
 async function loadPopUps() {
+    const anchor = document.getElementsByClassName("tag-newish")[0];
+    const belowY = (anchor.getBoundingClientRect().bottom + window.scrollY)/window.innerHeight;
     // Newest Music popup
-    let p = spawnPos(0.35, 0.65);
+    let p = spawnPos(0.35, belowY + 0.10, 0, 0);
     createPopUp("img/music/flames-small.png", "music.html#flames", "Music: new song 'Flames'", '', p.left, p.top, "80%", "1");
 
     setTimeout(() => {
         // Newest Project popup
-        const p = spawnPos(0.10, 0.73);
+        const p = spawnPos(0.10, belowY + 0.20, 0, 0);
         createPopUp("img/projects/ChopstixSolverSmall.jpg", "projects.html#chopsticks", "Projects: 'check out Chopstix Solver'", '', p.left, p.top, "80%", "2");
     }, 500);
 
     setTimeout(() => {
         // Games popup
-        const p = spawnPos(0.55, 0.81);
+        const p = spawnPos(0.55, belowY + 0.30, 0 ,0);
         createPopUp("img/projects/SpeedStreetsSmall.jpg", "games.html#speedstreets", "Games: play 'Speed Streets'", '', p.left, p.top, "80%", "3");
     }, 1000);
 }
