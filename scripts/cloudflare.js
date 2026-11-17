@@ -1,23 +1,19 @@
+const MOBILE_RE = /Mobi|Android|iPhone|iPod/i;
+
 export default {
-    async fetch(request, env) {
-        const url = new URL(request.url);
-        const userAgent = request.headers.get("User-Agent") || "";
+  async fetch(request, env) {
+    const url = new URL(request.url);
 
-        const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(userAgent);
-        if (url.pathname === "/mobile.html") {
-            return new Response("Not Found", { status: 404 });
-        }
+    if (url.pathname === "/" || url.pathname === "/index.html") {
+      const ua = request.headers.get("User-Agent") || "";
+      url.pathname = MOBILE_RE.test(ua) ? "/mobile.html" : "/index.html";
 
-        if (url.pathname === "/" || url.pathname === "/index.html") {
-            const target = isMobile ? "/mobile.html" : "/index.html";
-
-            const assetUrl = new URL(target, request.url);
-
-            return env.ASSETS.fetch(
-                new Request(assetUrl, request)
-            );
-        }
-
-        return env.ASSETS.fetch(request);
+      const res = await env.ASSETS.fetch(new Request(url, request));
+      const out = new Response(res.body, res);
+      out.headers.append("Vary", "User-Agent"); // keeps caches from mixing the two versions
+      return out;
     }
+
+    return env.ASSETS.fetch(request);
+  },
 };
