@@ -11,8 +11,10 @@ export default {
         if (url.pathname === "/" || url.pathname === "/index.html") {
             const target = isMobile ? "/mobile.html" : "/index.html";
 
+            const assetUrl = new URL(target, request.url);
+
             return env.ASSETS.fetch(
-                new Request(new URL(target, request.url), request)
+                new Request(assetUrl, request)
             );
         }
 
