@@ -189,7 +189,7 @@ a {
 
 
 .menu-content a::after {
-    content: "↗";
+    content: "↗\FE0E";
     margin-left: auto;
     font-size: 18px;
     color: #888;
